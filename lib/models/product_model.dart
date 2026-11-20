@@ -1,13 +1,14 @@
-// For demo only
 import 'package:shop/constants.dart';
 
 class ProductModel {
-  final String image, brandName, title;
+  final String image;
+  final String brandName;
+  final String title;
   final double price;
   final double? priceAfetDiscount;
   final int? dicountpercent;
 
-  ProductModel({
+  const ProductModel({
     required this.image,
     required this.brandName,
     required this.title,
@@ -20,142 +21,133 @@ class ProductModel {
 List<ProductModel> demoPopularProducts = [
   ProductModel(
     image: productDemoImg1,
-    title: "Mountain Warehouse for Women",
-    brandName: "Lipsy london",
-    price: 540,
-    priceAfetDiscount: 420,
-    dicountpercent: 20,
+    title: "Virtual Visa Card - \$10",
+    brandName: "SAM CARD",
+    price: 12.00,
+  ),
+  ProductModel(
+    image: productDemoImg2,
+    title: "Virtual Visa Card - \$25",
+    brandName: "SAM CARD",
+    price: 28.00,
+  ),
+  ProductModel(
+    image: productDemoImg3,
+    title: "Instagram Followers - 500",
+    brandName: "SOCIAL MEDIA",
+    price: 8.00,
+    priceAfetDiscount: 6.00,
+    dicountpercent: 25,
   ),
   ProductModel(
     image: productDemoImg4,
-    title: "Mountain Beta Warehouse",
-    brandName: "Lipsy london",
-    price: 800,
+    title: "Instagram Followers - 1,000",
+    brandName: "SOCIAL MEDIA",
+    price: 15.00,
   ),
   ProductModel(
     image: productDemoImg5,
-    title: "FS - Nike Air Max 270 Really React",
-    brandName: "Lipsy london",
-    price: 650.62,
-    priceAfetDiscount: 390.36,
-    dicountpercent: 40,
+    title: "PUBG Mobile UC - 660",
+    brandName: "GAME TOP-UP",
+    price: 9.99,
   ),
   ProductModel(
     image: productDemoImg6,
-    title: "Green Poplin Ruched Front",
-    brandName: "Lipsy london",
-    price: 1264,
-    priceAfetDiscount: 1200.8,
-    dicountpercent: 5,
-  ),
-  ProductModel(
-    image: "https://i.imgur.com/tXyOMMG.png",
-    title: "Green Poplin Ruched Front",
-    brandName: "Lipsy london",
-    price: 650.62,
-    priceAfetDiscount: 390.36,
-    dicountpercent: 40,
-  ),
-  ProductModel(
-    image: "https://i.imgur.com/h2LqppX.png",
-    title: "white satin corset top",
-    brandName: "Lipsy london",
-    price: 1264,
-    priceAfetDiscount: 1200.8,
-    dicountpercent: 5,
+    title: "Free Fire Diamonds - 1,000",
+    brandName: "GAME TOP-UP",
+    price: 12.50,
   ),
 ];
+
 List<ProductModel> demoFlashSaleProducts = [
   ProductModel(
+    image: productDemoImg3,
+    title: "Instagram Followers - 500",
+    brandName: "SOCIAL MEDIA",
+    price: 8.00,
+    priceAfetDiscount: 6.00,
+    dicountpercent: 25,
+  ),
+  ProductModel(
+    image: productDemoImg4,
+    title: "TikTok Followers - 1,000",
+    brandName: "SOCIAL MEDIA",
+    price: 12.00,
+    priceAfetDiscount: 9.00,
+    dicountpercent: 25,
+  ),
+  ProductModel(
     image: productDemoImg5,
-    title: "FS - Nike Air Max 270 Really React",
-    brandName: "Lipsy london",
-    price: 650.62,
-    priceAfetDiscount: 390.36,
-    dicountpercent: 40,
+    title: "PUBG Mobile UC - 660",
+    brandName: "GAME TOP-UP",
+    price: 11.99,
+    priceAfetDiscount: 9.99,
+    dicountpercent: 17,
+  ),
+];
+
+List<ProductModel> demoBestSellersProducts = [
+  ProductModel(
+    image: productDemoImg1,
+    title: "Virtual Visa Card - \$25",
+    brandName: "SAM CARD",
+    price: 28.00,
+    priceAfetDiscount: 25.00,
+    dicountpercent: 11,
+  ),
+  ProductModel(
+    image: productDemoImg2,
+    title: "PlayStation Store Gift Card - \$20",
+    brandName: "GIFT CARD",
+    price: 22.00,
   ),
   ProductModel(
     image: productDemoImg6,
-    title: "Green Poplin Ruched Front",
-    brandName: "Lipsy london",
-    price: 1264,
-    priceAfetDiscount: 1200.8,
-    dicountpercent: 5,
-  ),
-  ProductModel(
-    image: productDemoImg4,
-    title: "Mountain Beta Warehouse",
-    brandName: "Lipsy london",
-    price: 800,
-    priceAfetDiscount: 680,
-    dicountpercent: 15,
-  ),
-];
-List<ProductModel> demoBestSellersProducts = [
-  ProductModel(
-    image: "https://i.imgur.com/tXyOMMG.png",
-    title: "Green Poplin Ruched Front",
-    brandName: "Lipsy london",
-    price: 650.62,
-    priceAfetDiscount: 390.36,
-    dicountpercent: 40,
-  ),
-  ProductModel(
-    image: "https://i.imgur.com/h2LqppX.png",
-    title: "white satin corset top",
-    brandName: "Lipsy london",
-    price: 1264,
-    priceAfetDiscount: 1200.8,
-    dicountpercent: 5,
-  ),
-  ProductModel(
-    image: productDemoImg4,
-    title: "Mountain Beta Warehouse",
-    brandName: "Lipsy london",
-    price: 800,
-    priceAfetDiscount: 680,
-    dicountpercent: 15,
-  ),
-];
-List<ProductModel> kidsProducts = [
-  ProductModel(
-    image: "https://i.imgur.com/dbbT6PA.png",
-    title: "Green Poplin Ruched Front",
-    brandName: "Lipsy london",
-    price: 650.62,
-    priceAfetDiscount: 590.36,
-    dicountpercent: 24,
-  ),
-  ProductModel(
-    image: "https://i.imgur.com/7fSxC7k.png",
-    title: "Printed Sleeveless Tiered Swing Dress",
-    brandName: "Lipsy london",
-    price: 650.62,
-  ),
-  ProductModel(
-    image: "https://i.imgur.com/pXnYE9Q.png",
-    title: "Ruffle-Sleeve Ponte-Knit Sheath ",
-    brandName: "Lipsy london",
-    price: 400,
-  ),
-  ProductModel(
-    image: "https://i.imgur.com/V1MXgfa.png",
-    title: "Green Mountain Beta Warehouse",
-    brandName: "Lipsy london",
-    price: 400,
-    priceAfetDiscount: 360,
+    title: "Free Fire Diamonds - 1,000",
+    brandName: "GAME TOP-UP",
+    price: 12.50,
+    priceAfetDiscount: 10.00,
     dicountpercent: 20,
   ),
+];
+
+List<ProductModel> kidsProducts = [
   ProductModel(
-    image: "https://i.imgur.com/8gvE5Ss.png",
-    title: "Printed Sleeveless Tiered Swing Dress",
-    brandName: "Lipsy london",
-    price: 654,
+    image: productDemoImg5,
+    title: "PUBG Mobile UC - 325",
+    brandName: "GAME TOP-UP",
+    price: 5.99,
   ),
   ProductModel(
-    image: "https://i.imgur.com/cBvB5YB.png",
-    title: "Mountain Beta Warehouse",
-    brandName: "Lipsy london",
-    price: 250,
+    image: productDemoImg6,
+    title: "Free Fire Diamonds - 310",
+    brandName: "GAME TOP-UP",
+    price: 4.99,
+  ),
+  ProductModel(
+    image: productDemoImg3,
+    title: "Xbox Gift Card - \$10",
+    brandName: "GIFT CARD",
+    price: 11.00,
+  ),
+  ProductModel(
+    image: productDemoImg4,
+    title: "PlayStation Store Gift Card - \$20",
+    brandName: "GIFT CARD",
+    price: 22.00,
+    priceAfetDiscount: 20.00,
+    dicountpercent: 9,
+  ),
+  ProductModel(
+    image: productDemoImg1,
+    title: "Virtual Visa Card - \$10",
+    brandName: "SAM CARD",
+    price: 12.00,
+  ),
+  ProductModel(
+    image: productDemoImg2,
+    title: "TikTok Followers - 500",
+    brandName: "SOCIAL MEDIA",
+    price: 7.00,
   ),
 ];
