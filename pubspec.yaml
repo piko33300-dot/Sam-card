@@ -50,13 +50,6 @@ flutter:
           weight: 700
     - family: Grandis Extended
       fonts:
-        - asset: assets/fonts/grandis_extended/GrandisExtended-Regular.otf
-        - asset: assets/fonts/grandis_extended/PlusJakartaDisplay-Medium.otf
-          weight: 500
-        - asset: assets/fonts/grandis_extended/PlusJakartaDisplay-Bold.otf
-          weight: 700
-    - family: Grandis Extended
-      fonts:
         - asset: assets/fonts/grandis_extended/GrandisExtended-Regular.ttf
         - asset: assets/fonts/grandis_extended/GrandisExtended-Thin.ttf
           weight: 300
