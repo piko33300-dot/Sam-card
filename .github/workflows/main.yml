@@ -21,6 +21,21 @@ jobs:
         with:
           channel: 'stable'
 
+      - name: Upgrade Android Gradle & Kotlin configuration
+        run: |
+          rm -rf android/build.gradle android/settings.gradle android/app/build.gradle android/gradle/wrapper/gradle-wrapper.properties
+          flutter create . --platforms=android --org com.samcard --project-name sam_card
+
+      - name: Configure Google Services Plugin
+        run: |
+          if [ -f "android/settings.gradle.kts" ]; then
+            sed -i 's/id("com.android.application")/id("com.android.application")\n    id("com.google.gms.google-services") version "4.4.2" apply false/' android/settings.gradle.kts
+            sed -i 's/id("com.android.application")/id("com.android.application")\n    id("com.google.gms.google-services")/' android/app/build.gradle.kts
+          elif [ -f "android/settings.gradle" ]; then
+            sed -i 's/id "com.android.application"/id "com.android.application"\n    id "com.google.gms.google-services" version "4.4.2" apply false/' android/settings.gradle
+            sed -i 's/id "com.android.application"/id "com.android.application"\n    id "com.google.gms.google-services"/' android/app/build.gradle
+          fi
+
       - name: Install dependencies
         run: flutter pub get
 
