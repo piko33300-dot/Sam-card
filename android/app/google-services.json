@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "453998632217",
+    "project_id": "sam-car",
+    "storage_bucket": "sam-car.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:453998632217:android:ec753bae40d902a8e37988",
+        "android_client_info": {
+          "package_name": "com.samcard.store"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUBip9HI8lYSl4JU1fmWAbi3T2Y6EOYpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
