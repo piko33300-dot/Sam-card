@@ -1,0 +1,57 @@
+name: Build Android APK
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-apk:
+    name: Build release APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Check Firebase configuration
+        id: firebase
+        shell: bash
+        run: |
+          if [ -f android/app/google-services.json ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            echo "Firebase configuration found."
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "google-services.json not found; Firebase initialization will be skipped."
+          fi
+
+      - name: Install Flutter dependencies
+        run: flutter pub get
+
+      - name: Build release APK
+        run: flutter build apk --release --dart-define=FIREBASE_ENABLED=${{ steps.firebase.outputs.enabled }}
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sam-card-release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: error
+          retention-days: 14
