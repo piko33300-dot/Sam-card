@@ -12,11 +12,11 @@ const bool _firebaseEnabled = bool.fromEnvironment(
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (_firebaseEnabled) {
-    // Firebase config files are supplied by the app owner. Keep the storefront
-    // usable in preview builds if those platform files have not been added yet.
     try {
       await Firebase.initializeApp();
     } catch (error) {
+      // Allow the storefront preview to render when platform Firebase config
+      // has not yet been added. Auth and Firestore require the real config.
       debugPrint('Firebase initialization failed: $error');
     }
   }
@@ -27,20 +27,18 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'SAM CARD',
-      locale: const Locale('ar', 'AE'),
-      supportedLocales: const [Locale('ar', 'AE')],
-      localizationsDelegates: GlobalMaterialLocalizations.delegates,
-      theme: AppTheme.lightTheme(context),
-      themeMode: ThemeMode.light,
-      builder: (context, child) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: child ?? const SizedBox.shrink(),
-      ),
-      home: const StoreHomeScreen(),
-    );
-  }
+  Widget build(BuildContext context) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'SAM CARD',
+        locale: const Locale('ar', 'AE'),
+        supportedLocales: const [Locale('ar', 'AE')],
+        localizationsDelegates: GlobalMaterialLocalizations.delegates,
+        theme: AppTheme.lightTheme(context),
+        themeMode: ThemeMode.light,
+        builder: (context, child) => Directionality(
+          textDirection: TextDirection.rtl,
+          child: child ?? const SizedBox.shrink(),
+        ),
+        home: const StoreHomeScreen(),
+      );
 }
