@@ -1,4 +1,4 @@
-name: sam_card
+name: shop
 description: SAM CARD - independent digital services and virtual cards store.
 
 publish_to: "none"
@@ -47,6 +47,13 @@ flutter:
         - asset: assets/fonts/plus_jakarta/PlusJakartaDisplay-Medium.otf
           weight: 500
         - asset: assets/fonts/plus_jakarta/PlusJakartaDisplay-Bold.otf
+          weight: 700
+    - family: Grandis Extended
+      fonts:
+        - asset: assets/fonts/grandis_extended/GrandisExtended-Regular.otf
+        - asset: assets/fonts/grandis_extended/PlusJakartaDisplay-Medium.otf
+          weight: 500
+        - asset: assets/fonts/grandis_extended/PlusJakartaDisplay-Bold.otf
           weight: 700
     - family: Grandis Extended
       fonts:
